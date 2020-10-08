@@ -114,6 +114,7 @@ redis_hz: 10
 #   io-threads 4
 #   io-threads-do-reads yes
 redis_config_additional: ""
+redis_cluster_enabled: false
 
 ## Redis sentinel configs
 # Set this to true on a host to configure it as a Sentinel

@@ -105,3 +105,9 @@ aof-rewrite-incremental-fsync yes
 # Additional
 {{ redis_config_additional -}}
 {% endif -%}
+
+{% if redis_cluster_enabled %}
+cluster-enabled yes
+cluster-config-file nodes.conf
+cluster-node-timeout 5000
+{% end %}
