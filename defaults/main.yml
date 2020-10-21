@@ -131,7 +131,7 @@ redis_cluster_require_full_coverage: no
 redis_cluster_node_timeout: 5000
 redis_cluster_config_file: nodes.conf
 
-redis_latency_monitor_threshold:0
+redis_latency_monitor_threshold: 0
 
 ## Redis sentinel configs
 # Set this to true on a host to configure it as a Sentinel
