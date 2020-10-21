@@ -52,15 +52,15 @@ min-slaves-max-lag {{ redis_min_slaves_max_lag }}
 {% if redis_password -%}
 masterauth {{ redis_password }}
 {% endif -%}
-replica-serve-stale-data {{ redis_replica_serve_stale_data }}
-replica-read-only {{ redis_replica_read_only }}
-repl-diskless-sync {{ redis_repl_diskless_sync }}
+replica-serve-stale-data {{ redis_replica_serve_stale_data | string }}
+replica-read-only {{ redis_replica_read_only | string }}
+repl-diskless-sync {{ redis_repl_diskless_sync | string }}
 repl-diskless-sync-delay {{ redis_repl_diskless_sync_delay }}
 replica-priority {{ redis_replica_priority }}
-lazyfree-lazy-eviction {{ redis_lazyfree_lazy_eviction }}
-lazyfree-lazy-expire {{ redis_lazyfree_lazy_expire }}
-lazyfree-lazy-server-del {{ redis_lazyfree_lazy_server_del }}
-replica-lazy-flush {{ redis_replica_lazy_flush }}
+lazyfree-lazy-eviction {{ redis_lazyfree_lazy_eviction | string }}
+lazyfree-lazy-expire {{ redis_lazyfree_lazy_expire | string }}
+lazyfree-lazy-server-del {{ redis_lazyfree_lazy_server_del | string }}
+replica-lazy-flush {{ redis_replica_lazy_flush | string }}
 
 # Security
 {% if redis_password -%}
@@ -123,7 +123,7 @@ cluster-require-full-coverage {{ redis_cluster_require_full_coverage }}
 {% endif %}
 
 latency-monitor-threshold {{ redis_latency_monitor_threshold }}
-dynamic-hz {{ redis_dynamic_hz }}
+dynamic-hz {{ redis_dynamic_hz | string }}
 
 {% for key, value in redis_config_addtional_args.items() %}
 {{key}} {{value}}
